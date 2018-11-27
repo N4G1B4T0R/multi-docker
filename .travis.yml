@@ -9,12 +9,12 @@ script:
   - docker run nagib/react-test npm test -- --coverage
 
 after_success:
-  - docker build -t nagib/multi-client ./client
-  - docker build -t nagib/multi-nginx ./nginx
-  - docker build -t nagib/multi-server ./server
-  - docker build -t nagib/multi-worker ./worker
+  - docker build -t n4g1b4t0r/multi-client ./client
+  - docker build -t n4g1b4t0r/multi-nginx ./nginx
+  - docker build -t n4g1b4t0r/multi-server ./server
+  - docker build -t n4g1b4t0r/multi-worker ./worker
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push nagib/multi-client
-  - docker push nagib/multi-nginx
-  - docker push nagib/multi-server
-  - docker push nagib/multi-worker
+  - docker push n4g1b4t0r/multi-client
+  - docker push n4g1b4t0r/multi-nginx
+  - docker push n4g1b4t0r/multi-server
+  - docker push n4g1b4t0r/multi-worker
